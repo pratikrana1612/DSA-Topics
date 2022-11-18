@@ -223,6 +223,7 @@ void random_delete()
                 i++;
             }
             temp->next = temp->next->next;
+            free(temp->next);
         }
     }
 }
