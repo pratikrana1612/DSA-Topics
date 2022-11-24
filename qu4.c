@@ -76,7 +76,7 @@ void lastDelete()
 void main()
 {
     int choice=1;
-    // clrscr();
+     clrscr();
     while(choice)
     {
         create();

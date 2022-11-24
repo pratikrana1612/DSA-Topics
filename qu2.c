@@ -53,11 +53,11 @@ void lastInsert()
 }
 void display()
 {
+	struct node *temp;
      if (head == 0)
     {
-        printf("Linklist is empty");
+	printf("Linklist is empty");
     }
-    struct node *temp;
     temp = head;
     while (temp != 0)
     {
@@ -94,5 +94,4 @@ void main()
                 break;
         }
     }
-    getch();
 }

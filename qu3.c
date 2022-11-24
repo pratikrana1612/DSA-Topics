@@ -99,33 +99,32 @@ void display()
 void main()
 {
     int choice = 1;
-    // clrscr();
+    clrscr();
     while (choice)
     {
-        create();
-        printf("Enter choice(0/1):");
-        scanf("%d", &choice);
+	create();
+	printf("Enter choice(0/1):");
+	scanf("%d", &choice);
     }
     while (1)
     {
-        printf("\n 1.AfterparticularPos");
-        printf("\n 2.display");
-        printf("\n 3.exit");
-        printf("\n Enter choice: ");
-        scanf("%d", &choice);
+	printf("\n 1.AfterparticularPos");
+	printf("\n 2.display");
+	printf("\n 3.exit");
+	printf("\n Enter choice: ");
+	scanf("%d", &choice);
 
-        switch (choice)
-        {
-        case 1:
-            AfterparticularPos();
-            break;
-        case 2:
-            display();
-            break;
-        case 3:
-            exit(0);
-            break;
-        }
+	switch (choice)
+	{
+	case 1:
+	    AfterparticularPos();
+	    break;
+	case 2:
+	    display();
+	    break;
+	case 3:
+	    exit(0);
+	    break;
+	}
     }
-    // getch();
 }
