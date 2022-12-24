@@ -1,3 +1,6 @@
+// Roll no:2242
+// Name:Rana Pratik
+
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
@@ -26,7 +29,7 @@ void create()
         newnode->prev=tail;
         tail=newnode;
     }
-        newnode->next=NULL;
+        newnode->next=head;
 }
 void display()
 {
@@ -38,11 +41,12 @@ void display()
     else
     {
         temp=head;
-        while(temp!=NULL)
+        while(temp!=tail)
         {
             printf(" %d ",temp->data);
             temp=temp->next;
         }
+         printf(" %d ",temp->data);
     }
 }
 

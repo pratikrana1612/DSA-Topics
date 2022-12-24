@@ -36,21 +36,22 @@ void create()
 void display()
 {
     struct node *temp;
-    if(head==NULL)
+    if (head == NULL)
     {
         printf("Linklist is empty");
     }
     else
     {
-        temp=head;
-        while(temp!=tail)
+        temp = head;
+        while (temp != tail)
         {
-            printf(" %d ",temp->data);
-            temp=temp->next;
+            printf(" %d ", temp->data);
+            temp = temp->next;
         }
-         printf(" %d ",temp->data);
+        printf(" %d ", temp->data);
     }
 }
+
 int count()
 {
     int counter = 1;
@@ -63,45 +64,40 @@ int count()
     }
     return counter;
 }
-void insertPaticluarpos()
+void deletePaticularpos()
 {
-    int pos, i;
+    int i, pos;
     if (head == NULL)
     {
         printf("Linklist is empty");
     }
     else
     {
-        printf("Enter pos:");
+        printf("Enter position:");
         scanf("%d", &pos);
         if (pos > count())
         {
-            printf("\n \n ENTER VALID POSITION");
-            return;
+            printf("ENTER VALID POISTOIN");
         }
-        struct node *newnode = (struct node *)malloc(sizeof(struct node));
-        printf("\n Enter data:");
-        scanf("%d", &newnode->data);
-        if(pos==1)
+        else if(pos==1)
         {
-            newnode->prev=tail;
-            newnode->next=head;
-            head->prev=newnode;
-            head=newnode;
+            temp=head;
+            head=head->next;
+            head->prev=tail;
+            free(temp);
         }
         else
         {
             i = 1;
             temp = head;
-            while (i < pos - 1)
+            while (i < pos)
             {
                 temp = temp->next;
                 i++;
             }
-            newnode->prev = temp;
-            newnode->next = temp->next;
-            newnode->next->prev = newnode;
-            temp->next = newnode;
+            temp->next->prev = temp->prev;
+            temp->prev->next = temp->next;
+            free(temp);
         }
     }
 }
@@ -115,17 +111,19 @@ void main()
         printf("\n Do you want to continue(0/1):");
         scanf("%d", &choice);
     }
+
     while (1)
     {
-        printf(" \n 1.insertPaticluarpos");
-        printf(" \n 2.display");
-        printf(" \n 3.exit");
-        printf(" \n Enter choice:");
+        printf("\n 1.deletePaticularpos");
+        printf("\n 2.display");
+        printf("\n 3.exit");
+        printf("\n Enter choice:");
         scanf("%d", &choice);
+
         switch (choice)
         {
         case 1:
-            insertPaticluarpos();
+            deletePaticularpos();
             break;
         case 2:
             display();
