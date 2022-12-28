@@ -234,6 +234,20 @@ void random_delete()
         {
             printf("INVALID POSITION");
         }
+        else if(pos==1)
+        {
+            temp=head;
+            if(temp->next=NULL)
+            {
+                head=0;
+            }
+            else
+            {
+                head=head->next;
+                head->prev=0;
+            }
+            free(temp);
+        }
         else
         {
             int i = 1;
