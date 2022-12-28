@@ -77,7 +77,8 @@ void last_delete()
     {
         temp=tail;
         tail=tail->prev;
-        tail->next=NULL;
+        tail->next=head;
+        head->prev=tail;
         free(temp);
     }
 }

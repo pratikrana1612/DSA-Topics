@@ -43,7 +43,7 @@ void display()
     else
     {
         temp=head;
-        while(temp!=tail)
+        while(temp->next=head)
         {
             printf(" %d ",temp->data);
             temp=temp->next;

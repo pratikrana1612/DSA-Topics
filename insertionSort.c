@@ -1,19 +1,19 @@
-#include<stdio.h>
-#include<conio.h>
+#include <stdio.h>
+#include <conio.h>
 
-void insertionSort(int numbers[20],int n)
+void insertionSort(int numbers[20], int n)
 {
-    int i,j,temp;
-    for(i=0;i<n;i++)
+    int i, j, temp;
+    for (i = 0; i < n; i++)
     {
-        temp=numbers[i];
-        j=i-1;
-        while(j>=0 && numbers[j]>temp)
+        temp = numbers[i];
+        j = i - 1;
+        while (j >= 0 && numbers[j] > temp)
         {
-            numbers[j+1]=numbers[j];
+            numbers[j + 1] = numbers[j];
             j--;
         }
-        numbers[j+1]=temp;
+        numbers[j + 1] = temp;
     }
 }
 void main()
@@ -27,7 +27,7 @@ void main()
         printf("%dth element:", i);
         scanf("%d", &n[i]);
     }
-    insertionSort(n,max);
+    insertionSort(n, max);
     printf("order elements is:");
     for (i = 0; i < max; i++)
     {

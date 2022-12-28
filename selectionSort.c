@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <conio.h>
 
-void selectionSort(int numbers[20],int n)
+void selectionSort(int numbers[20], int n)
 {
     int min, temp, i, j;
     for (i = 0; i < n - 1; i++)
@@ -14,7 +14,7 @@ void selectionSort(int numbers[20],int n)
                 min = j;
             }
         }
-        if(min!=i)
+        if (min != i)
         {
             temp = numbers[i];
             numbers[i] = numbers[min];
@@ -33,7 +33,7 @@ void main()
         printf("%dth element:", i);
         scanf("%d", &n[i]);
     }
-    selectionSort(n,max);
+    selectionSort(n, max);
     printf("order elements is:");
     for (i = 0; i < max; i++)
     {
